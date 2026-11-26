@@ -1,0 +1,112 @@
+<resources>
+    <string name="app_name">Alrededor</string>
+
+    <string name="permiso_titulo_inicial">Descubre lo que hay a tu alrededor</string>
+    <string name="permiso_mensaje_inicial">Usamos tu ubicación para buscar lugares de interés cercanos en Wikipedia.</string>
+    <string name="permiso_boton_permitir">Permitir ubicación</string>
+
+    <string name="permiso_titulo_negado">Necesitamos tu ubicación</string>
+    <string name="permiso_mensaje_negado">Sin ubicación no podemos mostrarte lugares cercanos. Puedes intentarlo de nuevo.</string>
+    <string name="permiso_boton_reintentar">Reintentar</string>
+
+    <string name="permiso_titulo_permanente">Permiso desactivado</string>
+    <string name="permiso_mensaje_permanente">Para continuar, activa la ubicación en los ajustes de la aplicación.</string>
+    <string name="permiso_boton_ajustes">Abrir ajustes</string>
+
+    <string name="permiso_titulo_aproximado">Ubicación aproximada</string>
+    <string name="permiso_mensaje_aproximado">Podemos continuar, pero las distancias y direcciones serán menos exactas.</string>
+    <string name="permiso_boton_continuar">Continuar</string>
+
+    <string name="permiso_nota_privacidad">No guardamos tu ubicación exacta ni la enviamos a ningún servidor nuestro. Solo se usa para consultar Wikipedia.</string>
+
+    <string name="explorar_titulo">Cerca de ti</string>
+    <string name="explorar_actualizar">Actualizar</string>
+    <string name="explorar_ajustes">Ajustes</string>
+    <string name="tab_lista">Lista</string>
+    <string name="tab_mapa">Mapa</string>
+
+    <string name="explorar_modo_exploracion">Modo exploración</string>
+    <string name="explorar_mostrar_todo">Mostrar todo</string>
+    <string name="explorar_contador">%1$d de %2$d lugares</string>
+
+    <string name="explorar_buscando_ubicacion">Buscando tu ubicación…\nVerifica que el GPS esté activado.</string>
+    <string name="explorar_cargando">Buscando lugares cercanos…</string>
+
+    <string name="explorar_aviso_cache">Sin conexión: mostrando lugares guardados.</string>
+    <string name="explorar_aviso_error_actualizar">No se pudo actualizar. Mostrando los últimos lugares.</string>
+
+    <string name="explorar_error_sin_conexion">Sin conexión y sin lugares guardados para esta zona.</string>
+    <string name="explorar_error_sin_permiso">La app perdió el permiso de ubicación.</string>
+    <string name="explorar_error_desconocido">Ocurrió un error al buscar lugares.</string>
+    <string name="explorar_reintentar">Reintentar</string>
+
+    <string name="explorar_vacio_titulo">No encontramos lugares cercanos</string>
+    <string name="explorar_vacio_mensaje">Prueba con \"Mostrar todo\" o muévete a otra zona.</string>
+    <string name="explorar_sin_descripcion">Sin descripción</string>
+    <string name="explorar_mapa_pendiente">El mapa se agrega en la pantalla 3.</string>
+
+    <string name="direccion_frente">al frente</string>
+    <string name="direccion_derecha">a tu derecha</string>
+    <string name="direccion_atras">detrás de ti</string>
+    <string name="direccion_izquierda">a tu izquierda</string>
+
+    <string name="detalle_volver">Volver</string>
+    <string name="detalle_escuchar">Escuchar</string>
+    <string name="detalle_detener">Detener</string>
+    <string name="detalle_como_llegar">Cómo llegar</string>
+    <string name="detalle_ver_articulo">Ver artículo en Wikipedia</string>
+    <string name="detalle_atribucion">Fuente: Wikipedia (licencia CC BY-SA)</string>
+    <string name="detalle_cargando_resumen">Cargando resumen…</string>
+    <string name="detalle_sin_resumen">Este lugar no tiene resumen en Wikipedia.</string>
+    <string name="detalle_error_resumen_sin_conexion">No se pudo cargar el resumen. Revisa tu conexión.</string>
+    <string name="detalle_error_resumen">No se pudo cargar el resumen.</string>
+    <string name="detalle_no_encontrado">No encontramos este lugar.</string>
+    <string name="detalle_sin_voz">No hay una voz en español instalada en este dispositivo.</string>
+    <string name="detalle_sin_app_mapas">No hay una aplicación de mapas instalada.</string>
+
+    <string name="mapa_centrar">Centrar en mi ubicación</string>
+    <string name="mapa_ver_ficha">Ver ficha</string>
+    <string name="mapa_buscando_ubicacion">Buscando tu ubicación…</string>
+    <string name="mapa_sin_lugares">No hay lugares en esta zona.</string>
+    <string name="mapa_mi_ubicacion">Tu ubicación</string>
+
+    <!-- Ajustes -->
+    <string name="ajustes_titulo">Ajustes</string>
+    <string name="ajustes_seccion_busqueda">Búsqueda</string>
+    <string name="ajustes_radio">Radio de búsqueda</string>
+    <string name="ajustes_radio_valor">%1$d km</string>
+    <string name="ajustes_voz">Lectura en voz alta</string>
+    <string name="ajustes_voz_detalle">Muestra el botón Escuchar en la ficha de cada lugar</string>
+    <string name="ajustes_tema">Tema</string>
+    <string name="ajustes_tema_sistema">Sistema</string>
+    <string name="ajustes_tema_claro">Claro</string>
+    <string name="ajustes_tema_oscuro">Oscuro</string>
+
+    <string name="ajustes_seccion_privacidad">Privacidad</string>
+    <string name="ajustes_borrar">Borrar datos guardados</string>
+    <string name="ajustes_borrar_detalle">Elimina los lugares y resúmenes guardados en este teléfono</string>
+    <string name="ajustes_borrar_confirmar_titulo">¿Borrar los datos guardados?</string>
+    <string name="ajustes_borrar_confirmar_mensaje">Se eliminarán los lugares y resúmenes guardados. Podrás volver a verlos cuando haya conexión.</string>
+    <string name="ajustes_borrar_accion">Borrar</string>
+    <string name="ajustes_cancelar">Cancelar</string>
+    <string name="ajustes_msg_borrado">Datos guardados eliminados</string>
+    <string name="ajustes_msg_error_borrado">No se pudieron eliminar los datos</string>
+    <string name="ajustes_politica">Política de privacidad</string>
+
+    <string name="ajustes_seccion_acerca">Acerca de</string>
+    <string name="ajustes_wikipedia">Lugares y textos: Wikipedia</string>
+    <string name="ajustes_wikipedia_detalle">Contenido bajo licencia CC BY-SA 4.0</string>
+    <string name="ajustes_osm">Mapa: © OpenStreetMap contributors</string>
+    <string name="ajustes_osm_detalle">Datos del mapa de OpenStreetMap</string>
+    <string name="ajustes_geoapify">Mosaicos del mapa: Geoapify</string>
+    <string name="ajustes_geoapify_detalle">Powered by Geoapify © OpenMapTiles</string>
+    <string name="ajustes_version">Versión</string>
+    <string name="ajustes_volver">Volver</string>
+
+    <!-- Direcciones de enlaces (no se traducen) -->
+    <string name="url_wikipedia" translatable="false">https://es.wikipedia.org</string>
+    <string name="url_licencia_wikipedia" translatable="false">https://creativecommons.org/licenses/by-sa/4.0/deed.es</string>
+    <string name="url_osm" translatable="false">https://www.openstreetmap.org/copyright</string>
+    <string name="url_geoapify" translatable="false">https://www.geoapify.com</string>
+    <string name="url_politica_privacidad" translatable="false">https://eduardo.github.io/alrededor/privacidad</string>
+</resources>

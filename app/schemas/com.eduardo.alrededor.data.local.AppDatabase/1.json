@@ -1,0 +1,140 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 1,
+    "identityHash": "1e25cd811f54c75bb9dce96396034917",
+    "entities": [
+      {
+        "tableName": "lugares",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id_pagina` INTEGER NOT NULL, `titulo` TEXT NOT NULL, `latitud` REAL NOT NULL, `longitud` REAL NOT NULL, `descripcion` TEXT, `url_miniatura` TEXT, `url_articulo` TEXT NOT NULL, `es_relevante` INTEGER NOT NULL, `fecha_actualizacion` INTEGER NOT NULL, PRIMARY KEY(`id_pagina`))",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id_pagina",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "title",
+            "columnName": "titulo",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "lat",
+            "columnName": "latitud",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "lon",
+            "columnName": "longitud",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "description",
+            "columnName": "descripcion",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "thumbnailUrl",
+            "columnName": "url_miniatura",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "articleUrl",
+            "columnName": "url_articulo",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "isRelevant",
+            "columnName": "es_relevante",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "updatedAt",
+            "columnName": "fecha_actualizacion",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "id_pagina"
+          ]
+        },
+        "indices": [
+          {
+            "name": "idx_lugares_ubicacion",
+            "unique": false,
+            "columnNames": [
+              "latitud",
+              "longitud"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `idx_lugares_ubicacion` ON `${TABLE_NAME}` (`latitud`, `longitud`)"
+          },
+          {
+            "name": "idx_lugares_antiguedad",
+            "unique": false,
+            "columnNames": [
+              "fecha_actualizacion"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `idx_lugares_antiguedad` ON `${TABLE_NAME}` (`fecha_actualizacion`)"
+          }
+        ]
+      },
+      {
+        "tableName": "resumenes",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id_pagina` INTEGER NOT NULL, `extracto` TEXT, `fecha_actualizacion` INTEGER NOT NULL, PRIMARY KEY(`id_pagina`), FOREIGN KEY(`id_pagina`) REFERENCES `lugares`(`id_pagina`) ON UPDATE NO ACTION ON DELETE CASCADE )",
+        "fields": [
+          {
+            "fieldPath": "placeId",
+            "columnName": "id_pagina",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "extract",
+            "columnName": "extracto",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "updatedAt",
+            "columnName": "fecha_actualizacion",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "id_pagina"
+          ]
+        },
+        "foreignKeys": [
+          {
+            "table": "lugares",
+            "onDelete": "CASCADE",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "id_pagina"
+            ],
+            "referencedColumns": [
+              "id_pagina"
+            ]
+          }
+        ]
+      }
+    ],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '1e25cd811f54c75bb9dce96396034917')"
+    ]
+  }
+}
