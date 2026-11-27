@@ -108,7 +108,12 @@ fun MapTab(
             verticalArrangement = Arrangement.spacedBy(12.dp)
         ) {
             SmallFloatingActionButton(
-                onClick = { recenterTick++ },
+                onClick = {
+                    if (state.userLocation == null) {
+                        onAction(ExploreAction.RefreshClicked)
+                    }
+                    recenterTick++
+                },
                 containerColor = MaterialTheme.colorScheme.primary,
                 contentColor = MaterialTheme.colorScheme.onPrimary
             ) {

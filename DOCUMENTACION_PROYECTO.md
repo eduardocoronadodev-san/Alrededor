@@ -55,7 +55,9 @@ Documentación técnica completa del proyecto Android **Alrededor**, detallando 
 * [PlaceDao.kt](file:///C:/Users/coron/AndroidStudioProjects/Alrededor/app/src/main/java/com/eduardo/alrededor/data/local/PlaceDao.kt): Objeto de acceso a datos Room para `lugares` con operaciones `@Upsert` y búsquedas espaciales.
 * [SummaryEntity.kt](file:///C:/Users/coron/AndroidStudioProjects/Alrededor/app/src/main/java/com/eduardo/alrededor/data/local/SummaryEntity.kt): Entidad Room que mapea la tabla SQLite `resumenes` con clave foránea en cascada hacia `lugares.id_pagina`.
 * [SummaryDao.kt](file:///C:/Users/coron/AndroidStudioProjects/Alrededor/app/src/main/java/com/eduardo/alrededor/data/local/SummaryDao.kt): Objeto de acceso a datos Room para la tabla `resumenes`.
-* [AppDatabase.kt](file:///C:/Users/coron/AndroidStudioProjects/Alrededor/app/src/main/java/com/eduardo/alrededor/data/local/AppDatabase.kt): Base de datos Room SQLite (`guia.db`) que registra las entidades `PlaceEntity` y `SummaryEntity`.
+* [BookmarkEntity.kt](file:///C:/Users/coron/AndroidStudioProjects/Alrededor/app/src/main/java/com/eduardo/alrededor/data/local/BookmarkEntity.kt): Entidad Room que mapea la tabla SQLite `favoritos` con clave foránea en cascada hacia `lugares.id_pagina`.
+* [BookmarkDao.kt](file:///C:/Users/coron/AndroidStudioProjects/Alrededor/app/src/main/java/com/eduardo/alrededor/data/local/BookmarkDao.kt): Objeto de acceso a datos Room para la tabla `favoritos`.
+* [AppDatabase.kt](file:///C:/Users/coron/AndroidStudioProjects/Alrededor/app/src/main/java/com/eduardo/alrededor/data/local/AppDatabase.kt): Base de datos Room SQLite (`guia.db`) que registra las entidades `PlaceEntity`, `SummaryEntity` y `BookmarkEntity`.
 * [PlacesLocalDataSource.kt](file:///C:/Users/coron/AndroidStudioProjects/Alrededor/app/src/main/java/com/eduardo/alrededor/data/local/PlacesLocalDataSource.kt): Fuente de datos SQLite local para guardar y recuperar lugares en segundo plano.
 * [PermissionPreferencesDataSource.kt](file:///C:/Users/coron/AndroidStudioProjects/Alrededor/app/src/main/java/com/eduardo/alrededor/data/local/PermissionPreferencesDataSource.kt): Almacenamiento en DataStore Preferences para la bandera `ubicacion_ya_solicitada`.
 
@@ -148,9 +150,10 @@ graph TD
 ## 5. Funcionamiento de la Base de Datos Local (Room SQLite)
 
 * **Base de datos:** `AppDatabase` (`guia.db`).
-* **Tablas registradas (2 tablas):**
+* **Tablas registradas (3 tablas):**
   1. **`lugares` (`PlaceEntity`):** Almacena `id_pagina`, `titulo`, `latitud`, `longitud`, `descripcion`, `url_miniatura`, `url_articulo`, `es_relevante` y `fecha_actualizacion`.
   2. **`resumenes` (`SummaryEntity`):** Almacena el texto completo del extracto del artículo (`id_pagina`, `extracto`, `fecha_actualizacion`) con clave foránea en cascada hacia `lugares.id_pagina`.
+  3. **`favoritos` (`BookmarkEntity`):** Almacena los lugares marcados como favoritos por el usuario (`id_pagina`, `fecha_guardado`, `nota_personal`) con clave foránea en cascada hacia `lugares.id_pagina`.
 * **Índices de rendimiento:** Indexación sobre `(latitud, longitud)` y `fecha_actualizacion`.
 * **Operación de Caché:** Cada consulta exitosa a Wikipedia guarda o actualiza los registros en Room con `@Upsert`. Cuando no hay conexión a internet (`IOException` o `HttpException`), `PlacesRepositoryImpl` intercepta el fallo y consulta los lugares almacenados localmente realizando una búsqueda espacial por cuadro delimitador en SQLite (`findInBounds`).
 

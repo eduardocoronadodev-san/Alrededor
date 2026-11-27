@@ -130,7 +130,11 @@ fun OsmMap(
     LaunchedEffect(recenterTick) {
         if (recenterTick > 0) {
             userLocation?.let {
-                mapView.controller.animateTo(OsmGeoPoint(it.lat, it.lon))
+                val point = OsmGeoPoint(it.lat, it.lon)
+                mapView.post {
+                    mapView.controller.setZoom(15.0)
+                    mapView.controller.animateTo(point)
+                }
             }
         }
     }

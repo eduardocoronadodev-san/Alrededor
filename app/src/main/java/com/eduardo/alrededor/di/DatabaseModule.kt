@@ -3,6 +3,7 @@ package com.eduardo.alrededor.di
 import android.content.Context
 import androidx.room.Room
 import com.eduardo.alrededor.data.local.AppDatabase
+import com.eduardo.alrededor.data.local.BookmarkDao
 import com.eduardo.alrededor.data.local.PlaceDao
 import com.eduardo.alrededor.data.local.SummaryDao
 import dagger.Module
@@ -27,4 +28,7 @@ object DatabaseModule {
 
     @Provides
     fun provideSummaryDao(database: AppDatabase): SummaryDao = database.summaryDao()
+
+    @Provides
+    fun provideBookmarkDao(database: AppDatabase): BookmarkDao = database.bookmarkDao()
 }

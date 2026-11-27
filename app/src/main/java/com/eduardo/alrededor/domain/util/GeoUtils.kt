@@ -8,9 +8,6 @@ import kotlin.math.sqrt
 object GeoUtils {
     private const val EARTH_RADIUS_METERS = 6_371_000.0
 
-    /**
-     * Calcula la distancia en metros entre dos puntos geográficos (fórmula de Haversine).
-     */
     fun distance(lat1: Double, lon1: Double, lat2: Double, lon2: Double): Double {
         val dLat = Math.toRadians(lat2 - lat1)
         val dLon = Math.toRadians(lon2 - lon1)
